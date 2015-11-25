@@ -1,0 +1,65 @@
+#Documentation
+	#DataBase: (Models)
+	/*
+	 *	class <CLASS_NAME> extends database {
+	 *
+	 *		public function __construct() {
+	 *
+	 *			parent::__construct(<TABLE_NAME>);
+	 *
+	 *		}
+	 *
+	 *	}
+	 */
+		#INSERT:
+			$this->insert(array("Field_1" => "Value_1"));
+
+		#SELECT:
+			
+			$this->select(<SELECT>, <WHERE>, <ORDER BY>, <LIMIT>);
+			
+				#SELECT - <SELECT>
+					$this->select(array("*"));
+
+				#SELECT - <WHERE>
+					$this->select(array("*"), array("id" => "5"));
+
+					//logic operators
+						$this->select(array("*"), array("id" => "5", "OR:id" => "6"));
+					//multiple values of field
+						$this->select(array("*"), array("id" => "5", "OR:id" => array("1", "2", "3")));
+
+				#SELECT - <ORDER BY>
+					$this->select(array("*"), array("id" => "3"), array("user_id" => true, "id" => false));
+
+				#SELECT - <LIMTI>
+					$this->select(array("*"), array("id" => "3"), "", "2");
+
+#Documentation
+	#Component Class
+	/*
+		<?php
+
+			//component name must begin with keyword "component", example: componentWelcome
+
+			class component<YOUR_COMPONENT_NAME> {
+
+				public function actionDefault() {
+
+					//code
+
+				}
+
+				public function action<ANOTHER_ACTION> {
+
+
+				}
+
+				..
+				..
+
+			}
+
+		?>
+
+	*/
